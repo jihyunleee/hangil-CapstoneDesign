@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "856040844195",
+    "firebase_url": "https://hsproject-ba8c5.firebaseio.com",
+    "project_id": "hsproject-ba8c5",
+    "storage_bucket": "hsproject-ba8c5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856040844195:android:96981f8bfc40cb9d76c816",
+        "android_client_info": {
+          "package_name": "com.hausung.hangil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856040844195-u024hhn1fjp44r4p3hhgqnjla8gk1ad9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hausung.hangil",
+            "certificate_hash": "559d8cd7733cc8c12c664db71d7ef7d9bde72c5a"
+          }
+        },
+        {
+          "client_id": "856040844195-5taqr7p6nat05eo393u73c4537en9qeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu0bluNVfhb415Ebgu9lAkhh_x8bI8mtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856040844195-5taqr7p6nat05eo393u73c4537en9qeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
