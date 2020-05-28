@@ -28,6 +28,13 @@
         android:layout_marginTop="230dp"
         android:background="@drawable/border3"/>
 
+    <Button
+        android:id="@+id/toSansangPark"
+        android:layout_width="72dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="310dp"
+        android:background="@drawable/border3"/>
 
     <Button
         android:id="@+id/toSchoolLibraryStudyRoom"

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.chrisbanes.photoview.PhotoView;
+import com.hausung.hangil.Beacon.SangsangParkShowActivity;
 import com.hausung.hangil.MyPage.MyPageActivity;
 import com.hausung.hangil.R;
 import com.hausung.hangil.Show.LibraryStudyRoomShowActivity;
@@ -31,6 +32,8 @@ public class MapActivity extends AppCompatActivity {
         final AlertDialog.Builder builder1 = new AlertDialog.Builder(this);
         final AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         final AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder4 = new AlertDialog.Builder(this);
+
 
         //상상빌리지 세미나실 현황 페이지로 이동
         Button toSangsangVillageSeminarShowPage = (Button) findViewById(R.id.toSangsangVillageSeminaroom);
@@ -109,6 +112,33 @@ public class MapActivity extends AppCompatActivity {
                             }
                         });
                         builder3.create().show();
+                    }
+                }
+        );
+
+        //상상파크 현황 이동
+        Button toSansangPark = (Button) findViewById(R.id.toSansangPark);
+        toSansangPark.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        builder4.setTitle("상상파크 현황 파악");
+                        builder4.setIcon(R.mipmap.ic_launcher);
+                        builder4.setMessage("상상파크 이용상황 보시겠습니까?");
+                        builder4.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //MyPageActivity로 가는 인텐트 생성
+                                Intent intent4 = new Intent(getApplication(), SangsangParkShowActivity.class);
+                                startActivity(intent4);
+                            }
+                        });
+                        builder4.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        });
+                        builder4.create().show();
                     }
                 }
         );

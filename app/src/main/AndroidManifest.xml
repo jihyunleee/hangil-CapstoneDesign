@@ -44,6 +44,7 @@
         <activity android:name=".Show.SangsangVillageSeminarShowActivity" />
         <activity android:name=".Show.LibraryStudyRoomShowActivity" />
         <activity android:name=".Show.SangsangSeminarShowActivity" />
+        <activity android:name=".Beacon.SangsangParkShowActivity" />
 
         <activity android:name=".MyPage.MyPageActivity" />
         <activity android:name=".MyPage.MyPageSecondActivity"
