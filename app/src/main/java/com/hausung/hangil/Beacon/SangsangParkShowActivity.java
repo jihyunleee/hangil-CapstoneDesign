@@ -49,14 +49,14 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
         //스와이프 코드
         slidr = Slidr.attach(this);
         textShow = findViewById(R.id.textShow);
-        //비콘 매니저 생성,
+        //비콘 매니저 생성, BeaconManager의 인스턴스 획득
         beaconManager = BeaconManager.getInstanceForApplication(this);
         textView = (TextView) findViewById(R.id.textShow);//비콘검색후 검색내용 뿌려주기위한 textview
 
         //비콘 매니저에서 layout 설정 'm:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25'
         beaconManager.getBeaconParsers().add(new BeaconParser().setBeaconLayout("m:2-3=0215,i:4-19,i:20-21,i:22-23,p:24-24,d:25-25"));
 
-        //beaconManager 설정 bind
+        //beaconManager 설정 bind -> 서비스에 바인드를 호출
         beaconManager.bind(this);
 
         //beacon 을 활용하려면 블루투스 권한획득(Andoird M버전 이상)
@@ -83,7 +83,8 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
         beaconManager.unbind(this);
     }
     @Override
-    public void onBeaconServiceConnect() {
+    public void onBeaconServiceConnect() {    //Beacon 서비스에 연결되면 호출된다
+        //Notifier를 설정한다
         beaconManager.addRangeNotifier(new RangeNotifier() {
             @Override
             // 비콘이 감지되면 해당 함수가 호출된다. Collection<Beacon> beacons에는 감지된 비콘의 리스트가,
@@ -126,10 +127,9 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
                     //beacon 의 식별을 위하여 major값으로 확인
                     //이곳에 필요한 기능 구현
                     //textView.append("ID 1 : " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
-                    textView.append("출근하셔야되는데...\n");
+                    textView.append("여기는 상상파크 입니다\n");
                     textView.append("Beacon Bluetooth Id : "+address+"\n");
                     textView.append("Beacon UUID : "+uuid+"\n");
-
                 }else{
                     //나머지 비콘검색
                     textView.append("ID 2: " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActivity.ViewHolder>{
     private ArrayList<String> mData = null;
-
+    private int index=0;
     // 아이템 뷰를 저장하는 뷰홀더 클래스.
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView id;
@@ -39,6 +39,7 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
     RecyclerShowActivity(ArrayList<String> list) {
+        //this.index=index;
         mData = list;
     }
 
@@ -57,24 +58,31 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
     public void onBindViewHolder(RecyclerShowActivity.ViewHolder holder, int position) {
-        String id = mData.get(0).toString();
-        String mStrDate = mData.get(1).toString();
-        String mStrTime = mData.get(2).toString();
-        String mStrFinishTime = mData.get(3).toString();
-        String name = mData.get(4).toString();
-        String number = mData.get(5).toString();
-
+        String id=mData.get(index+0);
+        String mStrDate=mData.get(index+1);
+        String mStrTime=mData.get(index+2);
+        String mStrFinishTime=mData.get(index+3);
+        String name=mData.get(index+4);
+        String number=mData.get(index+5);
+        //String id = mData.get(index).get(0).toString();
+        //String mStrDate = mData.get(index).get(1).toString();
+        //String mStrTime = mData.get(index).get(2).toString();
+        //String mStrFinishTime = mData.get(index).get(3).toString();
+        //String name = mData.get(index).get(4).toString();
+        //String number = mData.get(index).get(5).toString();
         holder.id.setText(id);
         holder.mStrDate.setText(mStrDate);
         holder.mStrTime.setText(mStrTime);
         holder.mStrFinishTime.setText(mStrFinishTime);
         holder.name.setText(name);
         holder.number.setText(number);
+        index+=6;
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
     @Override
     public int getItemCount() {
-        return mData.size();
+        //6개의 요소로 나누면 몇개의 뷰를 보여줘야하는지 알 수 있다
+        return mData.size()/6;
     }
 }

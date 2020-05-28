@@ -18,19 +18,16 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.hausung.hangil.R;
 import com.hausung.hangil.Reservation.LibraryReservationActivity;
-import com.r0adkll.slidr.Slidr;
-import com.r0adkll.slidr.model.SlidrInterface;
 
 import java.util.ArrayList;
 
 public class LibraryStudyRoomShowActivity extends AppCompatActivity {
-    private SlidrInterface slidr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_librarystudyroom_show);
-        //스와이프 코드
-        slidr = Slidr.attach(this);
+
         // 리사이클러뷰에 LinearLayoutManager 객체 지정.
         final RecyclerView recyclerView = findViewById(R.id.recycler) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
@@ -58,14 +55,15 @@ public class LibraryStudyRoomShowActivity extends AppCompatActivity {
                                 mStrFinishTime=document.get("mStrFinishTime").toString();
                                 name=document.get("name").toString();
                                 number=document.get("number").toString();
-                                list.add(0,id);
-                                list.add(1,mStrDate);
-                                list.add(2,mStrTime);
-                                list.add(3,mStrFinishTime);
-                                list.add(4,name);
-                                list.add(5,number);
-                                adapter = new RecyclerShowActivity(list) ;
+                                list.add(id);
+                                list.add(mStrDate);
+                                list.add(mStrTime);
+                                list.add(mStrFinishTime);
+                                list.add(name);
+                                list.add(number);
+                                System.out.println(list);
                             }
+                            adapter = new RecyclerShowActivity(list);
                             recyclerView.setAdapter(adapter);
                         } else {
                             Log.w(BATTERY_SERVICE, "Error getting documents.", task.getException());
