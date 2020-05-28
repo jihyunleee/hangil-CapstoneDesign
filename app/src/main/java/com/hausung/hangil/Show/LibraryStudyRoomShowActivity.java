@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,6 +21,8 @@ import com.hausung.hangil.Reservation.LibraryReservationActivity;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 
+import java.util.ArrayList;
+
 public class LibraryStudyRoomShowActivity extends AppCompatActivity {
     private SlidrInterface slidr;
     @Override
@@ -28,23 +31,48 @@ public class LibraryStudyRoomShowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_librarystudyroom_show);
         //스와이프 코드
         slidr = Slidr.attach(this);
+        // 리사이클러뷰에 LinearLayoutManager 객체 지정.
+        final RecyclerView recyclerView = findViewById(R.id.recycler) ;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("AllLibraryStudyRoom")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        ArrayList<String> list = new ArrayList<>();
+                        RecyclerShowActivity adapter = null;
+                        String id;
+                        String mStrDate;
+                        String mStrTime;
+                        String mStrFinishTime;
+                        String name;
+                        String number;
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(BATTERY_SERVICE, document.getId() + " => " + document.getData());
-                                TextView storedDate = findViewById(R.id.storedData);
-                                storedDate.setText(document.getData().toString());
+                                id=document.get("id").toString();
+                                mStrDate=document.get("mStrDate").toString();
+                                mStrTime=document.get("mStrTime").toString();
+                                mStrFinishTime=document.get("mStrFinishTime").toString();
+                                name=document.get("name").toString();
+                                number=document.get("number").toString();
+                                list.add(0,id);
+                                list.add(1,mStrDate);
+                                list.add(2,mStrTime);
+                                list.add(3,mStrFinishTime);
+                                list.add(4,name);
+                                list.add(5,number);
+                                adapter = new RecyclerShowActivity(list) ;
                             }
+                            recyclerView.setAdapter(adapter);
                         } else {
                             Log.w(BATTERY_SERVICE, "Error getting documents.", task.getException());
                         }
                     }
                 });
+
         //스터디룸 예약 페이지로 이동
         Button toReservationPage = (Button) findViewById(R.id.toReservation);
         toReservationPage.setOnClickListener(
