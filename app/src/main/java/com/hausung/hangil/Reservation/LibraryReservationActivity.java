@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.hausung.hangil.Map.MapActivity;
@@ -64,7 +66,8 @@ public class LibraryReservationActivity extends AppCompatActivity {
                         name = mStrName.getText().toString();
                         id = mStrStudentid.getText().toString();
                         number = mStrNumber.getText().toString();
-
+                        //유저 아이디 정보를 받아오기 위해 FriebaseUser 필드 생성
+                        FirebaseUser userId = FirebaseAuth.getInstance().getCurrentUser();
                         //MapActivity로 가는 인텐트 생성
                         Intent intent = new Intent(getApplication(), MapActivity.class);
                         //파이어베이스에 정보 저장하기
@@ -76,7 +79,7 @@ public class LibraryReservationActivity extends AppCompatActivity {
                         user.put("mStrTime",mStrTime);
                         user.put("mStrFinishTime",mStrFinishTime);
                         user.put("mStrDate",mStrDate);
-
+                        user.put("mId", userId.getEmail());
                         db.collection("AllLibraryStudyRoom")
                                 .add(user)
                                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -92,6 +95,20 @@ public class LibraryReservationActivity extends AppCompatActivity {
                                     }
                                 });
 
+                        db.collection("AllReservation")
+                                .add(user)
+                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        Log.d(id, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(id, "Error adding document", e);
+                                    }
+                                });
                         startActivity(intent);
                     }
                 }

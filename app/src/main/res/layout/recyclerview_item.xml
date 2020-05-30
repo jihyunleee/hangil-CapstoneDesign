@@ -1,146 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="623dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="vertical"
         android:backgroundTint="@color/blue"
-        android:id="@+id/linearLayout">
-
-
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="horizontal">
-
-    <TextView
-        android:layout_height="44dp"
-        android:layout_width="34dp"
-        android:id="@+id/editText"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="날짜"
-        android:inputType="textPersonName"
-        android:ems="10"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/mStrDate"
-        android:textSize="14sp"
-        android:text="TextView"/>
-
-    <TextView
-        android:layout_height="44dp"
-        android:layout_width="34dp"
-        android:id="@+id/editText9"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="이름"
-        android:inputType="textPersonName"
-        android:ems="10"/>
-
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/name"
-        android:textSize="14sp"
-        android:text="TextView"/>
-
-    <TextView
-        android:layout_height="44dp"
-        android:layout_width="35dp"
-        android:id="@+id/editText10"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="학번"
-        android:inputType="textPersonName"
-        android:ems="10"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/id"
-        android:textSize="14sp"
-        android:text="TextView"/>
-
-    <TextView
-        android:layout_height="44dp"
-        android:layout_width="51dp"
-        android:id="@+id/editText11"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="인원수"
-        android:inputType="textPersonName"
-        android:ems="10"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/number"
-        android:textSize="14sp"
-        android:text="TextView"/>
-
-</LinearLayout>
+        android:orientation="vertical">
 
 
         <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <TextView
-        android:layout_height="46dp"
-        android:layout_width="74dp"
-        android:id="@+id/editText7"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="시작시간"
-        android:inputType="textPersonName"
-        android:ems="10"/>
+            <TextView
+                android:id="@+id/editText"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="날짜"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/mStrTime"
-        android:textSize="14sp"
-        android:text="TextView"/>
+            <TextView
+                android:id="@+id/mStrDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
 
-    <TextView
-        android:layout_height="43dp"
-        android:layout_width="78dp"
-        android:id="@+id/editText8"
-        android:textSize="18sp"
-        android:textColor="#2196F3"
-        android:text="종료시간"
-        android:inputType="textPersonName"
-        android:ems="10"/>
+            <TextView
+                android:id="@+id/editText9"
+                android:layout_width="34dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="이름"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/mStrFinishTime"
-        android:textSize="14sp"
-        android:text="TextView"/>
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/editText10"
+                android:layout_width="35dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="학번"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
 
-    <View
-        android:layout_height="2dp"
-        android:layout_width="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        android:background="#0090FF"
-        android:layout_centerInParent="true"/>
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/editText11"
+                android:layout_width="51dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="인원수"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/editText7"
+                android:layout_width="74dp"
+                android:layout_height="46dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="시작시간"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/mStrTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/editText8"
+                android:layout_width="78dp"
+                android:layout_height="43dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="종료시간"
+                android:textColor="#2196F3"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/mStrFinishTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#0090FF" />
+
+    </LinearLayout>
 
 </LinearLayout>
