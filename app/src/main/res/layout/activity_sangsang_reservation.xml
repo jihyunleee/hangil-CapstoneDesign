@@ -175,16 +175,17 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-            android:text="Date"
+            android:text="Start"
             android:textColor="@color/black"
             android:textSize="20dp" />
+
         <Button
             android:id="@+id/SelectDate"
-            android:onClick="mOnClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="86dp"
-            android:background="@drawable/time"/>
+            android:background="@drawable/time"
+            android:onClick="mOnClick" />
     </LinearLayout>
 
     <View
@@ -204,8 +205,8 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
+            android:text="Date"
             android:textColor="@color/black"
-            android:text="Time"
             android:textSize="20dp" />
 
         <Button

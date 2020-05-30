@@ -38,7 +38,7 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
     }
 
     // 생성자에서 데이터 리스트 객체를 전달받음.
-    RecyclerShowActivity(ArrayList<String> list) {
+    public RecyclerShowActivity(ArrayList<String> list) {
         //this.index=index;
         mData = list;
     }

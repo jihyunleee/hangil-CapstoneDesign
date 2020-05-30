@@ -28,7 +28,6 @@ public class SangsangSeminarShowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sangsang_seminar_show);
 
-        // 리사이클러뷰에 LinearLayoutManager 객체 지정.
         final RecyclerView recyclerView = findViewById(R.id.recycler) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
 

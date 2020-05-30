@@ -47,12 +47,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
-        android:layout_width="555dp"
-        android:layout_height="259dp"
+        android:layout_width="395dp"
+        android:layout_height="321dp"
         android:layout_marginTop="160dp"
         app:layout_constraintBottom_toTopOf="@+id/toReservation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.367" />
