@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hausung.hangil.Reservation.SangsangVillageReservationActivity;
+import com.hausung.hangil.Map.MapActivity;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -21,13 +21,13 @@ public class StartActivity extends AppCompatActivity {
         super.onStart();
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-/*
+
         //check if user is null
         if (firebaseUser != null){
             Intent intent = new Intent(StartActivity.this, MapActivity.class);
             startActivity(intent);
             finish();
-        }*/
+        }
     }
 
     @Override

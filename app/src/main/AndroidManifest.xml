@@ -24,7 +24,6 @@
         <activity android:name=".LoginActivity" android:parentActivityName=".StartActivity" />
         <activity android:name=".RegisterActivity" android:parentActivityName=".StartActivity"/>
         <activity android:name=".ResetPasswordActivity" android:parentActivityName=".LoginActivity" />
-        <activity android:name=".ReservationActivity" android:parentActivityName=".StartActivity" />
         <activity android:name=".Map.MapActivity" />
         <activity android:name=".Reservation.SangsangVillageReservationActivity" />
         <activity android:name=".Reservation.SangsangReservationActivity"/>

@@ -33,6 +33,7 @@ public class MapActivity extends AppCompatActivity {
         final AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
         final AlertDialog.Builder builder3 = new AlertDialog.Builder(this);
         final AlertDialog.Builder builder4 = new AlertDialog.Builder(this);
+        final AlertDialog.Builder builder5 = new AlertDialog.Builder(this);
 
 
         //상상빌리지 세미나실 현황 페이지로 이동
@@ -151,6 +152,25 @@ public class MapActivity extends AppCompatActivity {
                         //SeminarShowActivity로 가는 인텐트 생성
                         Intent intent = new Intent(getApplication(), MyPageActivity.class);
                         startActivity(intent);
+                    }
+                }
+        );
+
+        Button question = (Button) findViewById(R.id.question);
+        question.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        builder5.setTitle("How to use this map");
+                        builder5.setIcon(R.mipmap.ic_launcher);
+                        builder5.setMessage("연구관을 클릭하면\n"+"상상파크(그라지에)의 현황을 알 수 있습니다.\n" +
+                                "상상빌리지/미래관/상상관을 클릭하면\n" +"공유시설물을 예약할수 있습니다.");
+                        builder5.setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        });
+                        builder5.create().show();
                     }
                 }
         );
