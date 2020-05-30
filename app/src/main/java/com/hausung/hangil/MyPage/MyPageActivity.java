@@ -111,15 +111,9 @@ public class MyPageActivity extends AppCompatActivity {
         toSecession.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-
-
                         //회원탈퇴 코드 구현
-                        userId.delete();
-                        userId=null;
-                        /*
-                        //앱 종료
-                        finishAffinity();
-                        */
+                        FirebaseAuth.getInstance().getCurrentUser().delete();
+                        FirebaseAuth.getInstance().signOut();
                         finish();
                         //StartActivity로 가는 인텐트 생성
                         Intent intent = new Intent(getApplication(), StartActivity.class);
