@@ -26,7 +26,6 @@
         <activity android:name=".ResetPasswordActivity" android:parentActivityName=".LoginActivity" />
         <activity android:name=".ReservationActivity" android:parentActivityName=".StartActivity" />
         <activity android:name=".Map.MapActivity" />
-        <activity android:name=".Reservation.MoreActivity" />
         <activity android:name=".Reservation.SangsangVillageReservationActivity" />
         <activity android:name=".Reservation.SangsangReservationActivity"/>
         <activity android:name=".Reservation.LibraryReservationActivity" />
@@ -35,7 +34,6 @@
         <activity android:name=".Show.SangsangSeminarShowActivity" />
         <activity android:name=".Beacon.SangsangParkShowActivity" />
         <activity android:name=".MyPage.MyPageActivity" />
-        <activity android:name=".MyPage.MyPageSecondActivity" android:theme="@style/AppTheme.SlidrActivityTheme"/>
         <activity android:name=".MyPage.VersionViewActivity" android:theme="@style/AppTheme.SlidrActivityTheme"/>
 
     </application>

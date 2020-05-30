@@ -49,15 +49,15 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="394dp"
-        android:layout_height="374dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/toReservation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.367" />
+    android:id="@+id/recycler"
+    android:layout_width="394dp"
+    android:layout_height="374dp"
+    android:layout_marginTop="15dp"
+    app:layout_constraintBottom_toTopOf="@+id/toReservation"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.497"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textView5"
+    app:layout_constraintVertical_bias="0.367" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
