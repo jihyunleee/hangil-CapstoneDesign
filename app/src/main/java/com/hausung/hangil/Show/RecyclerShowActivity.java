@@ -58,25 +58,22 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
     // onBindViewHolder() - position에 해당하는 데이터를 뷰홀더의 아이템뷰에 표시.
     @Override
     public void onBindViewHolder(RecyclerShowActivity.ViewHolder holder, int position) {
-        String id=mData.get(index+0);
-        String mStrDate=mData.get(index+1);
-        String mStrTime=mData.get(index+2);
-        String mStrFinishTime=mData.get(index+3);
-        String name=mData.get(index+4);
-        String number=mData.get(index+5);
-        //String id = mData.get(index).get(0).toString();
-        //String mStrDate = mData.get(index).get(1).toString();
-        //String mStrTime = mData.get(index).get(2).toString();
-        //String mStrFinishTime = mData.get(index).get(3).toString();
-        //String name = mData.get(index).get(4).toString();
-        //String number = mData.get(index).get(5).toString();
-        holder.id.setText(id);
-        holder.mStrDate.setText(mStrDate);
-        holder.mStrTime.setText(mStrTime);
-        holder.mStrFinishTime.setText(mStrFinishTime);
-        holder.name.setText(name);
-        holder.number.setText(number);
-        index+=6;
+        if(index<mData.size()) {
+            String id = mData.get(index + 0);
+            String mStrDate = mData.get(index + 1);
+            String mStrTime = mData.get(index + 2);
+            String mStrFinishTime = mData.get(index + 3);
+            String name = mData.get(index + 4);
+            String number = mData.get(index + 5);
+
+            holder.id.setText(id);
+            holder.mStrDate.setText(mStrDate);
+            holder.mStrTime.setText(mStrTime);
+            holder.mStrFinishTime.setText(mStrFinishTime);
+            holder.name.setText(name);
+            holder.number.setText(number);
+            index+=6;
+        }
     }
 
     // getItemCount() - 전체 데이터 갯수 리턴.
