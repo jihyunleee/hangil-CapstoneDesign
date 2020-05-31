@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,6 +29,8 @@ import java.util.ArrayList;
 public class MyPageActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     private SlidrInterface slidr;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser userId = FirebaseAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +42,7 @@ public class MyPageActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
 
         //현재 로그인 아이디의 예약정보 리사이클러뷰로 보여주기
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseUser userId = FirebaseAuth.getInstance().getCurrentUser();
+
         db.collection("AllReservation").whereEqualTo("mId",userId.getEmail())
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -95,6 +94,7 @@ public class MyPageActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         //로그아웃 코드
                         FirebaseAuth.getInstance().signOut();
+                        finish();
                         //StartActivity로 가는 인텐트 생성
                         Intent intent = new Intent(getApplication(), StartActivity.class);
                         startActivity(intent);
@@ -114,32 +114,10 @@ public class MyPageActivity extends AppCompatActivity {
         toSecession.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
-                        // Get auth credentials from the user for re-authentication. The example below shows
-                        // email and password credentials but there are multiple possible providers,
-                        // such as GoogleAuthProvider or FacebookAuthProvider.
-                        AuthCredential credential = EmailAuthProvider
-                                .getCredential("user@example.com", "password1234");
-
-                        // Prompt the user to re-provide their sign-in credentials
-                        firebaseUser.reauthenticate(credential)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        // Log.d(TAG, "User re-authenticated.");
-                                    }
-                                });
-
                         //회원탈퇴 코드 구현
-                        firebaseUser.delete()
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            //Log.d(TAG, "User account deleted.");
-                                        }
-                                    }
-                                });
-                        //firebaseUser=null;
+                        FirebaseAuth.getInstance().getCurrentUser().delete();
+                        FirebaseAuth.getInstance().signOut();
+                        finish();
                         //StartActivity로 가는 인텐트 생성
                         Intent intent = new Intent(getApplication(), StartActivity.class);
                         startActivity(intent);
