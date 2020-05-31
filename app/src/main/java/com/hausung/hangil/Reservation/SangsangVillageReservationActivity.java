@@ -79,7 +79,7 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
                         user.put("mStrTime",mStrTime);
                         user.put("mStrFinishTime",mStrFinishTime);
                         user.put("mStrDate",mStrDate);
-                        user.put("building","상상빌리지 세미나실");
+                        user.put("building","상빌 세미나실");
                         user.put("room",room);
                         user.put("mId", userId.getEmail());
                         db.collection("AllSangsangVillageSeminarRoom")
