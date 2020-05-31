@@ -52,12 +52,11 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sangsangpark_show);
-        //스와이프 코드
-        slidr = Slidr.attach(this);
+
         textShow = findViewById(R.id.textShow);
 
         // 뷰 객체 생성
-        scrollView = (ScrollView)findViewById(R.id.scoll);
+        //scrollView = (ScrollView)findViewById(R.id.scoll);
         imageView = (ImageView)findViewById(R.id.image);
 
         // 수평 스크롤바 사용 기능 설정

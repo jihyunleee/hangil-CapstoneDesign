@@ -10,8 +10,8 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Library Reservation"
         android:background="@color/colorPrimaryDark"
+        android:text="도서관 스터디룸 예약"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
