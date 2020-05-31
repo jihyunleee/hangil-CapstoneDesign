@@ -2,8 +2,10 @@ package com.hausung.hangil.Beacon;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,6 +20,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.hausung.hangil.R;
 import com.r0adkll.slidr.Slidr;
@@ -37,7 +41,6 @@ import java.util.List;
 public class SangsangParkShowActivity extends AppCompatActivity implements BeaconConsumer {
     TextView textShow;
     private SlidrInterface slidr;
-    private ScrollView scrollView;
     private ImageView imageView;
 
     private static final String TAG = "Beacontest";
@@ -52,29 +55,13 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sangsangpark_show);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+        //스와이프 코드
+        slidr = Slidr.attach(this);
         textShow = findViewById(R.id.textShow);
 
         // 뷰 객체 생성
-        //scrollView = (ScrollView)findViewById(R.id.scoll);
         imageView = (ImageView)findViewById(R.id.image);
-
-        // 수평 스크롤바 사용 기능 설정
-        scrollView.setHorizontalScrollBarEnabled(true);
-
-
-        // 리소스 이미지 참조
-        Resources res = getResources(); // getResources() 메소드를 사용해 BitmapDrawable 객체를 만들 수 있습니다.
-        BitmapDrawable bitmap = (BitmapDrawable)res.getDrawable(R.drawable.sangsangpark_design);
-        int bitmapWidth = bitmap.getIntrinsicWidth(); // 원본 이미지의 가로 길이
-        int bitmapHeight = bitmap.getIntrinsicHeight(); // 원본 이미지의 세로 길이
-
-
-        // 이미지 리소스와 이미지 크기 결정
-        imageView.setImageDrawable(bitmap);
-        imageView.getLayoutParams().width = bitmapWidth;
-        imageView.getLayoutParams().height = bitmapHeight;
-
 
         //비콘 매니저 생성, BeaconManager의 인스턴스 획득
         beaconManager = BeaconManager.getInstanceForApplication(this);
