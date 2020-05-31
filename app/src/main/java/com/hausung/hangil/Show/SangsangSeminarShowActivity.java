@@ -44,7 +44,8 @@ public class SangsangSeminarShowActivity extends AppCompatActivity {
                         String mStrTime;
                         String mStrFinishTime;
                         String name;
-                        String number;
+                        String building;
+                        String room;
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(BATTERY_SERVICE, document.getId() + " => " + document.getData());
@@ -53,13 +54,16 @@ public class SangsangSeminarShowActivity extends AppCompatActivity {
                                 mStrTime=document.get("mStrTime").toString();
                                 mStrFinishTime=document.get("mStrFinishTime").toString();
                                 name=document.get("name").toString();
-                                number=document.get("number").toString();
+                                building=document.get("building").toString();
+                                room=document.get("room").toString();
+
                                 list.add(id);
                                 list.add(mStrDate);
                                 list.add(mStrTime);
                                 list.add(mStrFinishTime);
                                 list.add(name);
-                                list.add(number);
+                                list.add(building);
+                                list.add(room);
                                 System.out.println(list);
                             }
                             adapter = new RecyclerShowActivity(list);

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
     //예약 정보
     private EditText mStrName;
     private EditText mStrStudentid;
-    private EditText mStrNumber;
+    private String room;
     private  EditText mTime;
 
     private String mStrTime = "???";
@@ -44,7 +45,6 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
 
     String name;
     String id;
-    String number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,6 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
 
         mStrName=  (EditText) findViewById(R.id.name);
         mStrStudentid = (EditText) findViewById(R.id.studentid);
-        mStrNumber = (EditText) findViewById(R.id.number);
         mTime = (EditText) findViewById(R.id.time);
 
         //상상빌리지 세미나실 현황 페이지로 이동
@@ -66,7 +65,8 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
                         //예약 정보 업데이트
                         name = mStrName.getText().toString();
                         id = mStrStudentid.getText().toString();
-                        number = mStrNumber.getText().toString();
+                        Spinner spinner=(Spinner)findViewById(R.id.room);
+                        room=spinner.getSelectedItem().toString();
                         //유저 아이디 정보를 받아오기 위해 FriebaseUser 필드 생성
                         FirebaseUser userId = FirebaseAuth.getInstance().getCurrentUser();
                         //MapActivity로 가는 인텐트 생성
@@ -76,10 +76,11 @@ public class SangsangVillageReservationActivity extends AppCompatActivity {
                         Map<String, Object> user = new HashMap<>();
                         user.put("name", name);
                         user.put("id", id);
-                        user.put("number",number);
                         user.put("mStrTime",mStrTime);
                         user.put("mStrFinishTime",mStrFinishTime);
                         user.put("mStrDate",mStrDate);
+                        user.put("building","상상빌리지 세미나실");
+                        user.put("room",room);
                         user.put("mId", userId.getEmail());
                         db.collection("AllSangsangVillageSeminarRoom")
                                 .add(user)

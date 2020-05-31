@@ -22,7 +22,8 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
         TextView mStrTime;
         TextView mStrFinishTime;
         TextView name;
-        TextView number;
+        TextView building;
+        TextView room;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -33,7 +34,8 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
             mStrTime = itemView.findViewById(R.id.mStrTime);
             mStrFinishTime = itemView.findViewById(R.id.mStrFinishTime);
             name = itemView.findViewById(R.id.name);
-            number = itemView.findViewById(R.id.number);
+            building = itemView.findViewById(R.id.building);
+            room=itemView.findViewById(R.id.room);
         }
     }
 
@@ -64,15 +66,17 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
             String mStrTime = mData.get(index + 2);
             String mStrFinishTime = mData.get(index + 3);
             String name = mData.get(index + 4);
-            String number = mData.get(index + 5);
+            String building=mData.get(index+5);
+            String room=mData.get(index+6);
 
             holder.id.setText(id);
             holder.mStrDate.setText(mStrDate);
             holder.mStrTime.setText(mStrTime);
             holder.mStrFinishTime.setText(mStrFinishTime);
             holder.name.setText(name);
-            holder.number.setText(number);
-            index+=6;
+            holder.building.setText(building);
+            holder.room.setText(room);
+            index+=7;
         }
     }
 
@@ -80,6 +84,6 @@ public class RecyclerShowActivity extends RecyclerView.Adapter<RecyclerShowActiv
     @Override
     public int getItemCount() {
         //6개의 요소로 나누면 몇개의 뷰를 보여줘야하는지 알 수 있다
-        return mData.size()/6;
+        return mData.size()/7;
     }
 }

@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string-array name="library">
+        <item >2-1호</item>
+        <item >2-2호</item>
+        <item >3-1호</item>
+        <item >3-2호</item>
+        <item >4-1호</item>
+        <item >4-2호</item>
+        <item >5-1호</item>
+        <item >5-2호</item>
+    </string-array>
+</resources>

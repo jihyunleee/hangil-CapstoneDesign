@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 
 import androidx.annotation.NonNull;
@@ -35,7 +36,7 @@ public class LibraryReservationActivity extends AppCompatActivity {
     //예약 정보
     private  EditText mStrName;
     private EditText mStrStudentid;
-    private EditText mStrNumber;
+    private String room;
     private  EditText mTime;
 
     private String mStrTime = "???";
@@ -44,18 +45,17 @@ public class LibraryReservationActivity extends AppCompatActivity {
 
     String name;
     String id;
-    String number;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library_reservation);
+
         //스와이프 코드
         slidr = Slidr.attach(this);
 
         mStrName=  (EditText) findViewById(R.id.name);
         mStrStudentid = (EditText) findViewById(R.id.studentid);
-        mStrNumber = (EditText) findViewById(R.id.number);
         mTime = (EditText) findViewById(R.id.time);
 
         Button ConfirmSubmit = (Button) findViewById(R.id.Submit);
@@ -65,7 +65,8 @@ public class LibraryReservationActivity extends AppCompatActivity {
                         //예약 정보 업데이트
                         name = mStrName.getText().toString();
                         id = mStrStudentid.getText().toString();
-                        number = mStrNumber.getText().toString();
+                        Spinner spinner=(Spinner)findViewById(R.id.room);
+                        room=spinner.getSelectedItem().toString();
                         //유저 아이디 정보를 받아오기 위해 FriebaseUser 필드 생성
                         FirebaseUser userId = FirebaseAuth.getInstance().getCurrentUser();
                         //MapActivity로 가는 인텐트 생성
@@ -75,10 +76,11 @@ public class LibraryReservationActivity extends AppCompatActivity {
                         Map<String, Object> user = new HashMap<>();
                         user.put("name", name);
                         user.put("id", id);
-                        user.put("number",number);
                         user.put("mStrTime",mStrTime);
                         user.put("mStrFinishTime",mStrFinishTime);
                         user.put("mStrDate",mStrDate);
+                        user.put("building","도서관 스터디룸");
+                        user.put("room",room);
                         user.put("mId", userId.getEmail());
                         db.collection("AllLibraryStudyRoom")
                                 .add(user)

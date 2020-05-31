@@ -139,54 +139,20 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-            android:text="Number"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:background="@null"/>
-
-        <EditText
-            android:id="@+id/number"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:hint="1"
-            android:layout_marginStart="59dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:ems="10"
             android:background="@null"
-            android:theme="@style/EditTheme"/>
-
-    </LinearLayout>
-
-    <View
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_centerInParent="true"
-        android:background="@color/blue"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
-            android:text="Start"
+            android:text="Room"
             android:textColor="@color/black"
             android:textSize="20dp" />
-        <Button
-            android:id="@+id/SelectDate"
-            android:onClick="mOnClick"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="86dp"
-            android:background="@drawable/time"/>
-    </LinearLayout>
 
+
+        <Spinner
+            android:id="@+id/room"
+            android:layout_marginStart="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/library"/>
+
+    </LinearLayout>
     <View
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
@@ -209,7 +175,7 @@
             android:textSize="20dp" />
 
         <Button
-            android:id="@+id/SelectTime"
+            android:id="@+id/SelectDate"
             android:onClick="mOnClick"
             android:layout_width="40dp"
             android:layout_height="35dp"
@@ -217,6 +183,36 @@
             android:background="@drawable/calendar" />
 
     </LinearLayout>
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="@color/blue"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:text="Time"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/SelectTime"
+            android:onClick="mOnClick"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="86dp"
+            android:background="@drawable/time"/>
+    </LinearLayout>
+
 
     <View
         android:layout_marginTop="40dp"
