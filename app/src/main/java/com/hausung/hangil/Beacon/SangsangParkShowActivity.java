@@ -54,13 +54,13 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_sangsangpark_show);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+
         //스와이프 코드
         slidr = Slidr.attach(this);
         textShow = findViewById(R.id.textShow);
-
-        // 뷰 객체 생성
         imageView = (ImageView)findViewById(R.id.image);
 
         //비콘 매니저 생성, BeaconManager의 인스턴스 획득
@@ -137,16 +137,29 @@ public class SangsangParkShowActivity extends AppCompatActivity implements Beaco
                 int major = beacon.getId2().toInt(); //beacon major
                 int minor = beacon.getId3().toInt();// beacon minor
                 String address = beacon.getBluetoothAddress();
-                if(major==40001){
+                if(minor==45325){
                     //beacon 의 식별을 위하여 major값으로 확인
                     //이곳에 필요한 기능 구현
                     //textView.append("ID 1 : " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
                     textView.append("여기는 상상파크 입니다\n");
-                    textView.append("Beacon Bluetooth Id : "+address+"\n");
-                    textView.append("Beacon UUID : "+uuid+"\n");
+                    textView.append("Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())));
+                    //textView.append("Beacon Bluetooth Id : "+address+"\n");
+                    //textView.append("Beacon UUID : "+uuid+"\n");
+                    if( beacon.getDistance()<= 1){
+                        imageView.setImageResource(R.drawable.one);
+                        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                    }
+                    else if( 2<= beacon.getDistance() &&beacon.getDistance()<= 5){
+                        imageView.setImageResource(R.drawable.two);
+                        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                    }
+                    else{
+                        imageView.setImageResource(R.drawable.sangsangpark_design);
+                        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+                    }
                 }else{
                     //나머지 비콘검색
-                    textView.append("ID 2: " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
+                   // textView.append("ID 2: " + beacon.getId2() + " / " + "Distance : " + Double.parseDouble(String.format("%.3f", beacon.getDistance())) + "m\n");
                 }
 
             }
