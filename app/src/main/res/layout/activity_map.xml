@@ -47,20 +47,19 @@
         android:id="@+id/toMyPage"
         android:layout_width="75dp"
         android:layout_height="80dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/boogiface"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentRight="true"
+        android:background="@drawable/boogiface" />
 
     <Button
         android:id="@+id/question"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/question"
-        android:layout_marginTop="530dp"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="330dp"
-        android:onClick="mOnClick"/>
+        android:layout_marginTop="530dp"
+        android:background="@drawable/question"
+        android:onClick="mOnClick" />
 
 </RelativeLayout>
