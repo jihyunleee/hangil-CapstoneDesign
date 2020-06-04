@@ -43,12 +43,6 @@
         android:layout_marginTop="265dp"
         android:background="@drawable/border3"/>
 
-    <Button
-        android:id="@+id/toMyPage"
-        android:layout_width="75dp"
-        android:layout_height="80dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/boogiface" />
 
     <Button
         android:id="@+id/question"
@@ -58,7 +52,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="330dp"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/question"
         android:onClick="mOnClick" />
 

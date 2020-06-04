@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.hausung.hangil.Map.MapActivity;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -74,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
                                         FirebaseUser user = auth.getCurrentUser();
-                                        Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();

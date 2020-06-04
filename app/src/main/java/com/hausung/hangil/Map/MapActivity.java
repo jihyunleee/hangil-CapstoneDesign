@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.hausung.hangil.Beacon.SangsangParkShowActivity;
+import com.hausung.hangil.Chatting.ChattingActivity;
 import com.hausung.hangil.MyPage.MyPageActivity;
 import com.hausung.hangil.R;
 import com.hausung.hangil.Show.LibraryStudyRoomShowActivity;
@@ -19,11 +20,13 @@ import com.hausung.hangil.Show.SangsangVillageSeminarShowActivity;
 
 public class MapActivity extends AppCompatActivity {
 
+    Button chattingbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-
+        //chattingbtn = findViewById(R.id.chatting);
         //Map 이미지
         PhotoView photoView = findViewById(R.id.photoView);
         photoView.setImageResource(R.drawable.map);
@@ -145,7 +148,7 @@ public class MapActivity extends AppCompatActivity {
         );
 
         //마이페이지로 이동
-        Button toMyPage = (Button) findViewById(R.id.toMyPage);
+        /*Button toMyPage = (Button) findViewById(R.id.toMyPage);
         toMyPage.setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
@@ -154,7 +157,7 @@ public class MapActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-        );
+        );*/
 
         Button question = (Button) findViewById(R.id.question);
         question.setOnClickListener(
@@ -174,6 +177,14 @@ public class MapActivity extends AppCompatActivity {
                     }
                 }
         );
+
+      /*  chattingbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), ChattingActivity.class);
+                startActivity(intent);
+            }
+        });*/
 
     }
 }

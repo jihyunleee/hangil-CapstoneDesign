@@ -58,12 +58,6 @@
                                       </entry>
                                     </map>
                                   </option>
-                                  <option name="values">
-                                    <map>
-                                      <entry key="foregroundImage" value="C:\Program Files\Android\Android Studio\plugins\android\lib\templates\gradle-projects\NewAndroidModule\root\res\drawable-v24\hangil.png" />
-                                      <entry key="foregroundLayerName" value="ic_launcher_foreground_hangil" />
-                                    </map>
-                                  </option>
                                 </PersistentState>
                               </value>
                             </entry>

@@ -8,18 +8,20 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="623dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:orientation="vertical">
 
 
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/editText9"
                 android:layout_width="34dp"
                 android:layout_height="44dp"
@@ -27,10 +29,13 @@
                 android:inputType="textPersonName"
                 android:text="이름"
                 android:textColor="#2196F3"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
 
             <TextView
+                android:textColor="@color/black"
+                android:layout_marginLeft="25dp"
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,6 +43,8 @@
                 android:textSize="14sp" />
 
             <TextView
+
+                android:layout_marginLeft="10dp"
                 android:id="@+id/editText10"
                 android:layout_width="35dp"
                 android:layout_height="44dp"
@@ -45,51 +52,18 @@
                 android:inputType="textPersonName"
                 android:text="학번"
                 android:textColor="#2196F3"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
                 android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/editText11"
-                android:layout_width="51dp"
-                android:layout_height="44dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="건물명"
-                android:textColor="#2196F3"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/building"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/editText12"
-                android:layout_width="35dp"
-                android:layout_height="43dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="호수"
-                android:textColor="#2196F3"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/room"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textSize="14sp" />
-
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -97,6 +71,55 @@
             android:orientation="horizontal">
 
             <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/editText11"
+                android:layout_width="51dp"
+                android:layout_height="44dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="건물명"
+                android:textColor="#2196F3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:id="@+id/building"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/editText12"
+                android:layout_width="35dp"
+                android:layout_height="43dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="호수"
+                android:textColor="#2196F3"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:id="@+id/room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="5dp"
                 android:id="@+id/editText"
                 android:layout_width="34dp"
                 android:layout_height="44dp"
@@ -104,9 +127,12 @@
                 android:inputType="textPersonName"
                 android:text="날짜"
                 android:textColor="#2196F3"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold"/>
 
             <TextView
+                android:layout_marginLeft="25dp"
+                android:textColor="@color/black"
                 android:id="@+id/mStrDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -115,37 +141,39 @@
 
             <TextView
                 android:id="@+id/editText7"
-                android:layout_width="67dp"
+                android:layout_width="31dp"
                 android:layout_height="46dp"
+                android:layout_marginLeft="13dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="시작시간"
+                android:text="시간"
                 android:textColor="#2196F3"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:layout_marginLeft="15dp"
                 android:id="@+id/mStrTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="14sp" />
-
+                android:textSize="14sp"
+                android:textColor="@color/black"/>
+           <TextView
+               android:layout_marginLeft="10dp"
+               android:textColor="@color/black"
+               android:layout_width="10dp"
+               android:layout_height="wrap_content"
+               android:text="~"/>
             <TextView
-                android:id="@+id/editText8"
-                android:layout_width="68dp"
-                android:layout_height="43dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="종료시간"
-                android:textColor="#2196F3"
-                android:textSize="18sp" />
-
-            <TextView
+                android:layout_marginLeft="10dp"
                 android:id="@+id/mStrFinishTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textColor="@color/black"
+               />
 
         </LinearLayout>
 

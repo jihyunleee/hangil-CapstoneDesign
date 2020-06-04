@@ -147,7 +147,7 @@
 
         <Spinner
             android:id="@+id/room"
-            android:layout_marginStart="43dp"
+            android:layout_marginStart="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/library"/>
@@ -209,7 +209,7 @@
             android:onClick="mOnClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="86dp"
+            android:layout_marginStart="80dp"
             android:background="@drawable/time"/>
     </LinearLayout>
 

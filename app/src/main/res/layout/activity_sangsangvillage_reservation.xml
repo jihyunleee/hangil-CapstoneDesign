@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:text="상상빌리지 세미나실 예약"
+        android:text="도서관 스터디룸 예약"
         android:textColor="@color/white"
         android:textSize="20dp" />
 
@@ -147,10 +147,10 @@
 
         <Spinner
             android:id="@+id/room"
-            android:layout_marginStart="43dp"
+            android:layout_marginStart="65dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/sangvillage_semina"/>
+            android:entries="@array/library"/>
 
     </LinearLayout>
     <View
@@ -209,7 +209,7 @@
             android:onClick="mOnClick"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_marginStart="86dp"
+            android:layout_marginStart="80dp"
             android:background="@drawable/time"/>
     </LinearLayout>
 

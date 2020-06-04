@@ -31,6 +31,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:18.0.0'
     implementation 'com.google.firebase:firebase-storage:16.0.4'
     implementation 'com.google.firebase:firebase-database:18.0.0'
+
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.google.firebase:firebase-core:17.0.0'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:18.0.0'
+    implementation 'com.google.firebase:firebase-functions:18.0.0'
+
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     // material desgin
     implementation 'com.google.android.material:material:1.1.0-alpha02'
@@ -43,4 +49,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:21.4.3'
     //beacon
     implementation 'org.altbeacon:android-beacon-library:2.+'//alt-beacon library
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    //circleimageview
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
