@@ -34,88 +34,69 @@
 >
 >그 후에 각 건물을 클릭하여 현재 예약되어있는 정보를 파이어스토어에서 받아와 리사이클러뷰를 통해 보여주도록 설계를 하였습니다. 우선 각 컬렉션의 문서를 for문을 통해 document에 하나씩 받아옵니다. 그리고 미리 만들어둔 ArrayList에 각 정보들을 순차적으로 넣습니다. 그렇게 되면 각 문서마다 7개의 필드를 ArrayList에 저장하고(로그인 아이디는 리사이클러뷰에 표시하지 않기에 따로 ArrayList에 저장하지 않았습니다.) RecyclerShowActivity 클래스 객체 adapter를 만듭니다. 해당 클래스에서는 리사이클러뷰에 보여줄 각 item들을 만들어주는 역할을 합니다. 우선 객체를 만들때 생성자에 파이어스토어로부터 데이터 전체를 받아온 ArrayList 정보를 넘겨줍니다. 그럼 이 ArrayList에는 7개의 필드 정보 * 총 문서의 개수만큼의 인덱스가 있게 됩니다. 따라서 리사이클러뷰에서는 문서의 개수만큼만 item으로 보여주어야되기 때문에 ArrayList를 7로 나누어주는 작업을 했습니다. 그 후에 xml의 각 textView에 매칭되도록 ArrayList의 인덱스 번호로 접근하여 데이터를 넣어주었고 인덱스 번호가 ArrayList의 사이즈를 넘으면 안되기에 if문을 통해 제어를 해주었습니다.
 
-
-
 *프로젝트 구조*
 
->  ![ex_screenshot](./img/project.png)
 
+
+<img width="700" height="400" src="./img/project.png"></img>
 
 
 *작품 소개*
 
->1. 초기 화면
->
->![](./img/1.png)
->
->
->
->2.  계정 등록
->
->![screenshot](./img/2.png)
->
->
->
->3. 파이어베이스 인증
->
->![screenshot](./img/Authentication.JPG)
->
->
->
->4. 로그인 
->
->![screenshot](./img/3.png)
->
->
->
->5. 비밀번호 재설정
->
->![screenshot](./img/4.png)
->
->
->
->6. 지도 선택
->
->![screenshot](./img/5.png)
->
->
->
->7. 공유시설물 현황
->
->![screenshot](./img/7.png)
->
->
->
->8. 공유시설물 예약
->
->![screenshot](./img/8.png)
->
->
->
->9. cloud firestore에서 예약 DB 저장
->
->![screenshot](./img/cloudfirestore.JPG)
->
->
->
->10. 비콘을 이용한 공유시설물 현황 파악
->
->![screenshot](./img/bc.JPG)
->
->
->
->11. 마이페이지
->
->![screenshot](./img/6.png)
->
->
 
 
+<div>
+<img width="200" src="./img/1.png"></img>
+<img width="200" src="./img/2.png"></img>
+<img width="200" src="./img/3.png"></img>
+</div>
+<hr>
+
+
+
+
+<div>
+<img width="200" src="./img/4.png"></img>  
+<img width="200" src="./img/5.png"></img>  
+<img width="200" src="./img/6.png"></img>   
+</div>
+
+<hr>
+
+
+
+
+
+<div>
+<img width="200" src="./img/7.png"></img>  
+<img width="200" src="./img/8.png"></img>
+<img width="200" src="./img/9.png"></img>
+</div>
+<hr>
+
+<div>
+<img width="200" src="./img/10.png"></img>  
+<img width="200" src="./img/11.png"></img>
+</div>
+<hr>
+
+
+<div>
+<img width="700" height="400" src="./img/Authentication.JPG"></img>
+<img width="700" height="400" src="./img/cloudfirestore.JPG"></img>
+<hr>
 
 *기대효과*
 
->  다른 장소(카페, 도서관 등)에 사람이 있는지 파악해서 예약할수 있는 시스템을 만들 수 있습니다.
+>  학교뿐만 아니라 다른 장소(카페, 도서관, 가게 등)에 사람이 있는지 확인해서 예약할수 있는 시스템을 만들 수 있습니다.
 >
->  예약을 하기 위해 굳이 장소에 갈 필요가 없습니다.
+>  학생들이 어플을 다운로드하고, 팀 프로젝트가 있을 때 사용할 것입니다.
 >
->  효율적으로 학교 시설물을 이용할 수 있으므로 학생들의 만족도가 크게 높아질 것입니다.
+>  세미나실 예약 양식을 적기 위해 팀원들이 모두 행정부서 앞에 모여서 있을 필요도 없을 것입니다.
+>
+>  보다 편하게 세미나실 사용현황도 파악할 수 있어서 팀 프로젝트를 할 수 있는 공간이 비어있는 잉여시간이 줄어들 것입니다.
+>
+>  효율적으로 학교 시설물을 이용할 수 있으므로 학생들의 만족도도 크게 높아질 것으로 기대합니다.
+>
+>  해당 어플리케이션 내부에서 채팅 기능을 구현하여 따로 다른 메신저 앱 없이 세미나실 사용자 당사자들끼리 의견 조율을 할 수 있을 것이라 기대합니다. 
+
