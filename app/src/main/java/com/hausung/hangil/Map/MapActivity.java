@@ -20,8 +20,6 @@ import com.hausung.hangil.Show.SangsangVillageSeminarShowActivity;
 
 public class MapActivity extends AppCompatActivity {
 
-    Button chattingbtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

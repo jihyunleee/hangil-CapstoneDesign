@@ -9,16 +9,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:onClick="OnButtonClicked"
+        android:textColor="@color/white"
+        android:text="click"/>
     <TextView
         android:id="@+id/textShow"
-        android:text="상상파크 현황 파악"
+        android:text="상상파크 사용자 현황"
         android:textAlignment="center"
+        android:textColor="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="OnButtonClicked" />
+
     <ImageView
         android:id="@+id/image"
         android:background="@drawable/sangsangpark_design"
